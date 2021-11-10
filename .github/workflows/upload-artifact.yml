@@ -34,3 +34,13 @@ jobs:
       with:
         name: my-artifact
         path: path/to/artifact/*.txt
+        
+    - uses: actions/checkout@v2
+
+    - uses: actions/download-artifact@v2
+      with:
+        name: my-artifact
+    
+    - name: Display structure of downloaded files
+      run: ls -R
+
